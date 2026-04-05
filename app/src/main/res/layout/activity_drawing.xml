@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1A1A1A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="#0D0D0D"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <TextView
+            android:id="@+id/tvBoardTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="New Board"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnUndo"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:text="↩"
+            android:textSize="16sp"
+            android:backgroundTint="#2A2A2A"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="6dp"
+            android:padding="0dp"/>
+
+        <Button
+            android:id="@+id/btnRedo"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:text="↪"
+            android:textSize="16sp"
+            android:backgroundTint="#2A2A2A"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="6dp"
+            android:padding="0dp"/>
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Clear"
+            android:backgroundTint="#CC0000"
+            android:textColor="#FFFFFF"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
+
+    </LinearLayout>
+
+    <com.example.whiteboardai.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"/>
+
+    <LinearLayout
+        android:id="@+id/penSizeRow"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="#111111"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pen Size"
+            android:textColor="#AAAAAA"
+            android:textSize="11sp"
+            android:layout_marginEnd="8dp"/>
+
+        <SeekBar
+            android:id="@+id/seekBarPen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="50"
+            android:progress="8"
+            android:progressTint="#4444FF"
+            android:thumbTint="#4444FF"/>
+
+        <TextView
+            android:id="@+id/tvPenSize"
+            android:layout_width="28dp"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:layout_marginStart="6dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/eraserSizeRow"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="#111111"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eraser Size"
+            android:textColor="#AAAAAA"
+            android:textSize="11sp"
+            android:layout_marginEnd="8dp"/>
+
+        <SeekBar
+            android:id="@+id/seekBarEraser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="80"
+            android:progress="30"
+            android:progressTint="#FFFFFF"
+            android:thumbTint="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/tvEraserSize"
+            android:layout_width="28dp"
+            android:layout_height="wrap_content"
+            android:text="30"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:layout_marginStart="6dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/colorRow"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#0D0D0D"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color"
+            android:textColor="#AAAAAA"
+            android:textSize="11sp"
+            android:layout_marginEnd="12dp"/>
+
+        <View
+            android:id="@+id/colorBlack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/circle_black"
+            android:layout_marginEnd="8dp"/>
+
+        <View
+            android:id="@+id/colorRed"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/circle_red"
+            android:layout_marginEnd="8dp"/>
+
+        <View
+            android:id="@+id/colorBlue"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/circle_blue"
+            android:layout_marginEnd="8dp"/>
+
+        <View
+            android:id="@+id/colorGreen"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/circle_green"
+            android:layout_marginEnd="8dp"/>
+
+        <View
+            android:id="@+id/colorYellow"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/circle_yellow"
+            android:layout_marginEnd="8dp"/>
+
+        <View
+            android:id="@+id/colorOrange"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/circle_orange"
+            android:layout_marginEnd="8dp"/>
+
+        <View
+            android:id="@+id/colorPurple"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/circle_purple"
+            android:layout_marginEnd="8dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="#0D0D0D"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <Button
+            android:id="@+id/btnPen"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="✏ Pen"
+            android:textSize="11sp"
+            android:backgroundTint="#4444FF"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnEraser"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Eraser"
+            android:textSize="11sp"
+            android:backgroundTint="#333333"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnShapes"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Shapes"
+            android:textSize="11sp"
+            android:backgroundTint="#333333"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnText"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Text"
+            android:textSize="11sp"
+            android:backgroundTint="#333333"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+</LinearLayout>
